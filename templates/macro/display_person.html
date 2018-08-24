@@ -1,0 +1,58 @@
+
+{% macro display_person(persons) %}
+
+	{% if persons == 0 %}
+        <h2>No person found</h2>
+    {% endif %}
+
+	<!--Grid row-->
+    <div class="row wow fadeIn">
+	{% for person in persons %}
+		
+		
+		<!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4">
+                        <!--Card-->
+                        <div class="card">
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img style="width:400px;height:400px;"
+                                src="{{ url_for('static',filename='img/'+person.image_id) }}" 
+                                class="card-img-top" alt="">
+                                
+                            </div>
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Title-->
+                                <h4 class="card-title">
+                                    <div class="blue-text">{{ person.name }}</div>
+                                </h4>
+                                <!--Text-->
+                                <p class="card-text">
+                                    {{ person.read_more() }}
+                                </p>
+                                <a href="{{ url_for('detail',slug=person.slug) }}" target="" 
+                                    class="btn btn-primary btn-md">
+                                    Read More
+                                    <i class="fa fa-play ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                <!--Grid column-->
+
+               {% if loop.index % 3 == 0 %}
+               		</div>
+               		<!--Grid row-->
+    				<div class="row wow fadeIn">
+    			
+
+               {% endif %}
+           	
+
+	{% endfor %}
+	</div>	
+
+
+{% endmacro %}

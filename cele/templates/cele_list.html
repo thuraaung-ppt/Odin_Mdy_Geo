@@ -1,0 +1,49 @@
+{% extends "cele_base.html" %}
+{% block content_title %}Celebrities{% endblock %}
+
+{% block content_main %}
+
+	
+	<!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-lg-12 col-md-6 mb-12">
+
+                        <!--Card-->
+                    <div class="card">
+                            <a href="{{ url_for('cele.cele_list',person_type='Model') }}" 
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Models</b>
+                                <span class="badge badge-primary badge-pill">14</span>
+                            </a>
+                            <a href="{{ url_for('cele.cele_list',person_type='Actor') }}" 
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Actors</b>
+                                <span class="badge badge-primary badge-pill">2</span>
+                            </a>
+                            <a href="{{ url_for('cele.cele_list',person_type='Actress') }}" 
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Actress</b>
+                                <span class="badge badge-primary badge-pill">2</span>
+                            </a>
+                            <a href="{{ url_for('cele.cele_list',person_type='Director') }}" 
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Directors</b>
+                                <span class="badge badge-primary badge-pill">1</span>
+                            </a>
+                            <a href="{{ url_for('cele.cele_list',person_type='Vocalist') }}" 
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                                <b>Vocalist</b>
+                                <span class="badge badge-primary badge-pill">1</span>
+                            </a>
+                            
+                    </div>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+
+{% endblock %}
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static',filename='css/mdb.min.css') }}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{{ url_for('static',filename='css/style.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    
+    
+
+    <div class="container mt-5">
+
+         
+         <!-- Heading -->
+            <div class="card mb-4 wow fadeIn">
+
+
+                <!--Card content-->
+                <div class="card-body d-sm-flex justify-content-between">                    
+
+                    <h4 class="mb-2 mb-sm-0 pt-1">
+                        <h4>
+                                <b>Biography In Detail</b>
+                            
+                        </h4>
+                    </h4>
+                    <form class="d-flex justify-content-left">                       
+                        
+
+                    </form>
+
+                </div>
+
+            </div>
+    <!-- Heading -->   
+            <!--Grid row-->
+            
+            <!--Grid row-->
+
+            <!--News card-->
+<div class="card mb-3 text-center hoverable">
+    <div class="card-body">
+        <!--Grid row-->
+        <div class="row pt-2 wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-4 offset-md-1 mx-3 my-3">
+                <!--Featured image-->
+                <div class="view overlay">
+                    <img 
+                    src="{{ url_for('static',filename='img/'+person.image_id) }}" 
+                    alt="" 
+                    class="img-fluid">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-7 text-left ml-3 mt-3">
+                <!--Excerpt-->
+                
+                <h3 class="font-weight-bold text-left mb-3 dark-grey-text">
+                {{ person.name }}</h3>
+                <p class="text-justify">
+                    {{ person.biography }}
+            </p>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+</div>
+<!--News card-->
+       
+           
+            
+        </div>
+
+
+        <br><br><br><br><br><br><br><br><br><br>
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">   
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2018 Copyright:
+            <a href="#"> Odin-Mdy-Geo.com </a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" 
+      src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}">
+    </script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/popper.min.js') }}">
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/mdb.min.js') }}">
+    </script>
+
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+
+    
+</body>
+
+</html>

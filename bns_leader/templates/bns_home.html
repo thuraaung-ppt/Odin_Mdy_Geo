@@ -1,0 +1,16 @@
+{% extends "bns_base.html" %}
+{% from "macro/display_person.html" import display_person %}
+
+{% block content_title %}Business Leader{% endblock %}
+
+{% block content_search %}
+	
+	{% include "include/add_search.html" %}
+
+{% endblock %}
+
+{% block content_main %}
+
+	{{ display_person(persons) }}	
+
+{% endblock %}

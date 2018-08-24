@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    	<title>{% block content_title %}{% endblock %}</title>
+    	<!-- Font Awesome -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<!-- Bootstrap core CSS -->
+    	<link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    	<!-- Material Design Bootstrap -->
+    	<link href="{{ url_for('static',filename='css/mdb.min.css') }}" rel="stylesheet">
+    	<!-- Your custom styles (optional) -->
+    	<link href="{{ url_for('static',filename='css/style.min.css') }}" rel="stylesheet">
+
+	</head>	
+	<body>		
+		<!--Main Navigation-->
+    <header>               
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+                    <div class="container-fluid">
+
+                        <!-- Brand -->
+                        <a class="navbar-brand waves-effect" href="#">
+                            <!-- <strong class="blue-text">WWM</strong> -->
+                        </a>
+                        <a class="navbar-brand waves-effect" href="#">
+                            <!-- <strong class="blue-text">WWM</strong> -->
+                        </a>
+
+                        <!-- Collapse -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="true" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <!-- Left -->
+                            <ul class="navbar-nav mr-auto nav nav-tabs">
+                                <li class="nav-item active">
+                                    <a class="nav-link waves-effect" href="{{ url_for('home') }}">Home
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link waves-effect" 
+                                    href="{{ url_for('news') }}">News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link waves-effect" 
+                                        href="{{ url_for('about') }}">
+                                    About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link waves-effect" href="{{ url_for('contact') }}">Contact</a>
+                                </li>
+                            </ul>
+
+                            {% block content_search %}{% endblock %}
+                            
+
+                    <!-- Right -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link waves-effect">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link waves-effect">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link waves-effect">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="#" class="nav-link border border-light rounded waves-effect">
+                                <i class="fa fa-github mr-2"></i>HWM GitHub
+                            </a>
+                        </li> -->
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Sidebar -->
+        <div class="sidebar-fixed position-fixed">
+
+            <a class="logo-wrapper waves-effect">
+                <img src="{{ url_for('static',filename='img/logo1.png') }}" 
+                class="img-fluid" alt="" style="width:150px;height:150px;">
+            </a>
+
+            <div class="list-group list-group-flush">
+                <!-- <a href="#" class="list-group-item active waves-effect">
+                    <i class="fa fa-dashboard mr-3"></i>Dashboard
+                </a> -->
+                <a href="{{ url_for('cdt_parties.cdt_home') }}" 
+                class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-users indigo-text mr-3"></i>Candidates from Parties</a>
+                <a href="{{ url_for('mb_pmt.mb_home') }}"
+                 class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-users indigo-text mr-3"></i>Members of Parliaments</a>
+                <a href="{{ url_for('bns_leader.bns_home') }}" 
+                class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-users indigo-text mr-3"></i>Business Leaders</a>
+                <a href="{{ url_for('cele.cele_home') }}" 
+                class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-users indigo-text mr-3"></i>Celebrities</a>
+                <a href="{{ url_for('modern_figures.modern_home') }}" 
+                class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-users indigo-text mr-3"></i>Modern Historical Figures</a>
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="pt-5 mx-lg-5">
+        <div class="container-fluid mt-5">           
+
+        	{% block content_main %}{% endblock %}
+        </div>
+    </main><br><br><br><br><br><br><br><br><br><br>
+    <!--Main layout-->
+
+
+    	<!--Footer-->
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">   
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2018 Copyright:
+            <a href="#"> Odin-Mdy-Geo.com </a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+	<!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" 
+    src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/popper.min.js') }}">
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}">
+    </script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/mdb.min.js') }}">
+    </script>
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+    </script>
+	</body>
+
+</html>
