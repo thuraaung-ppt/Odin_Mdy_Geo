@@ -3,6 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
+        <meta name="description" content="">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     	<meta http-equiv="x-ua-compatible" content="ie=edge">
     	<title>{% block content_title %}{% endblock %}</title>
@@ -14,6 +15,27 @@
     	<link href="{{ url_for('static',filename='css/mdb.min.css') }}" rel="stylesheet">
     	<!-- Your custom styles (optional) -->
     	<link href="{{ url_for('static',filename='css/style.min.css') }}" rel="stylesheet">
+
+        <!-- Disable tap highlight on IE -->
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="Web Starter Kit">
+        <link rel="icon" sizes="192x192" href="{{ url_for('static',filename='img/wwm.png') }}">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+        <link rel="apple-touch-icon" href="{{ url_for('static',filename='img/wwm.png') }}">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="{{ url_for('static',filename='img/wwm.png') }}">
+        <meta name="msapplication-TileColor" content="#2F3BA2">
+
+        <!-- Color the status bar on mobile devices -->
+        <meta name="theme-color" content="#2F3BA2">
 
 	</head>	
 	<body>		
@@ -97,7 +119,7 @@
         <div class="sidebar-fixed position-fixed">
 
             <a class="logo-wrapper waves-effect">
-                <img src="{{ url_for('static',filename='img/logo1.png') }}" 
+                <img src="{{ url_for('static',filename='img/wwm.png') }}" 
                 class="img-fluid" alt="" style="width:150px;height:150px;">
             </a>
 
